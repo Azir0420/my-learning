@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch8 表單排版</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="display-3 text-center text-bg-primary fw900 py-3 my-3">課程線上報名表</div>
+            </div>
+            <div class="col-12">
+                <ul>
+                    <li>1.Email:包含@這個字元，使用includes();8~15字</li>
+                    <li>2.密碼:8~16字</li>
+                    <li>3.手機:10字;開頭為09-XXXXXXXX,使用startsWith()</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 bg-light">
+                <div class="mb-3">
+                    <label for="username" class="form-label">姓名</label>
+                    <input type="text" class="form-control form-control-lg" id="username" placeholder="姓名字串2~8!">
+                    <div class="valid-feedback">姓名輸入符合規定!</div>
+                    <div class="invalid-feedback">姓名輸入不符合規定!</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 bg-light">
+                <div class="mb-3">
+                    <label for="useremail" class="form-label">Email</label>
+                    <input type="text" class="form-control form-control-lg" id="useremail"
+                        placeholder="ex:....@mail.com">
+                    <div class="valid-feedback">Email輸入符合規定!</div>
+                    <div class="invalid-feedback">Email輸入不符合規定!</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 bg-light">
+                <div class="mb-3">
+                    <label for="userpsw" class="form-label">密碼</label>
+                    <input type="text" class="form-control form-control-lg" id="userpsw" placeholder="密碼8~16">
+                    <div class="valid-feedback">密碼輸入符合規定!</div>
+                    <div class="invalid-feedback">密碼輸入不符合規定!</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 bg-light">
+                <div class="mb-3">
+                    <label for="usertel" class="form-label">手機</label>
+                    <input type="text" class="form-control form-control-lg" id="usertel" placeholder="ex:09-XXXXXXXX">
+                    <div class="valid-feedback">手機輸入符合規定!</div>
+                    <div class="invalid-feedback">手機輸入不符合規定!</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 bg-light">
+                <div class="mb-3">
+                    <label for="city" class="form-label">居住縣市</label>
+                    <select name="" class="form-select form-select-lg" id="city">
+                        <option value="" selected disabled class="text-center">---請選擇縣市名稱---</option>
+                        <option value="臺中市">臺中市</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-check-inline">感興趣內容</label>
+            <div>
+                <input type="checkbox" class="form-check-input" name="interest" id="chk01" value="HTML/CSS">
+                <label for="chk01" class="form-check-label">HTML/CSS</label>
+            </div>
+            <div>
+                <input type="checkbox" class="form-check-input" name="interest" id="chk02" value="JAVAScript">
+                <label for="chk02" class="form-check-label">JAVAScript</label>
+            </div>
+            <div>
+                <input type="checkbox" class="form-check-input" name="interest" id="chk03" value="Python">
+                <label for="chk03" class="form-check-label">Python</label>
+            </div>
+            <div>
+                <input type="checkbox" class="form-check-input" name="interest" id="chk04" value="AI協作開發">
+                <label for="chk04" class="form-check-label">AI協作開發</label>
+            </div>
+            <div id="interest_msg" class="text-secondary">
+                請至少選擇一項課程
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 bg-light">
+                <div class="mb-3">
+                    <label for="" class="form-label">偏好上課方式(單選)</label>
+                    <div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="chk01" value="實體課程" name="classMode">
+                            <label for="rad01" class="form-check-label">實體課程</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="chk02" value="線上課程" name="classMode">
+                            <label for="rad01" class="form-check-label">線上課程</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="chk03" value="混和課程" name="classMode">
+                            <label for="rad01" class="form-check-label">混和課程</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="classMode" class="text-secondary"></div>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">課程通知設定</label>
+
+            <div class="form-check form-switch">
+                <input type="checkbox" class="form-check-input" id="switch01" value="  yes" name="notice">
+                <label for="switch01" class="form-check-label">是否接受課程通知</label>
+            </div>
+            <div id="switch_msg" class="text-secondary mt-2">
+                目前狀態:關閉
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">程式內容自我評估
+                <span class="text-primary fw900 fs-3" id="range_value">5</span>分
+            </label>
+            <input type="range" class="form-range" min="1" max="10" step="1" value="5" id="range01">
+            <div class="d-flex justify-content-between">
+                <span class="text-secondary">1-完全不會</span>
+                <span class="text-secondary">10-非常熟悉</span>
+            </div>
+
+        </div>
+
+
+        <div class="row p-2">
+            <div class="col-12 text-center mt-3">
+                <button class="btn btn-primary" id="ok_btn">確認送出</button>
+                <button class="btn btn-secondary" id="reset_btn">重新填寫</button>
+            </div>
+        </div>
+
+        <!-- 顯示輸入的訊息區塊 -->
+        <div class="row">
+            <div class="col-12">
+                <div class="display-5 text-bg-success fw900 text-center py-3 my-3">報名資料確認</div>
+            </div>
+            <div class="col-12" id="showmsg"></div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        let flag_username = false; //布林值
+        let flag_useremail = false;
+        let flag_userpsw = false;
+        let flag_usertel = false;
+        let flag_city = false;
+        let flag_interest = false;
+        let flag_classMode = false;
+
+        interest = [];
+        let classMode = '';
+        let switchStatus = false;
+        let score = 5;
+        $(function () {
+            //及時監聽 #username
+            $("#username").on("input", function () {
+
+                // console.log($("#username").val());
+
+                //LocalStorage及時儲存
+                let username = $(this).val();
+                localStorage.setItem("username", username);
+
+
+
+
+
+                console.log("input:" + $(this).val().length);
+                if ($(this).val().length > 1 && $(this).val().length < 9) {
+                    //符合規定
+                    console.log("符合規定!");
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_username = true;
+                } else {
+                    //不符合規定
+                    console.log("不符合規定!");
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_username = false;
+                }
+
+
+
+
+            });
+
+            //重新載入時，取得先前儲存的username
+            let savedUsername = localStorage.getItem("username")
+            console.log(savedUsername);
+
+            if (savedUsername != null) {
+                $("#username").val(savedUsername);
+                $("#username").trigger("input");
+            }
+
+            //輸入完成後離開欄位才觸發
+            // $("#username").on("change", function () {
+            //     console.log("chang:" + $(this).val());
+            // });
+
+
+            //可以用let email = $(this).val()來簡化
+
+            $("#useremail").on("input", function () {
+                console.log("input:" + $(this).val().length);
+                localStorage.setItem("useremail", useremail);
+
+                // Email 格式的正規表達式
+                let emailRule = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+                if (
+                    $(this).val().length > 7 &&
+                    $(this).val().length < 30 &&
+                    emailRule.test($(this).val())
+                ) {
+                    console.log("符合規定!");
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_useremail = true;
+                } else {
+                    // 不符合規定
+                    console.log("不符合規定!");
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_useremail = false;
+                }
+            });
+            let savedUseremail = localStorage.getItem("username")
+            console.log(savedUseremail);
+
+            if (savedUseremail != null) {
+                $("#useremail").val(savedUseremail);
+                $("#useremail").trigger("input");
+            }
+
+            $("#userpsw").on("input", function () {
+
+                console.log("input:" + $(this).val().length);
+                if ($(this).val().length > 7 && $(this).val().length < 17) {
+                    //符合規定
+                    console.log("符合規定!");
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_userpsw = true;
+                } else {
+                    //不符合規定
+                    console.log("不符合規定!");
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_userpsw = false;
+                }
+            });
+
+            $("#usertel").on("input", function () {
+
+                console.log("input:" + $(this).val().length);
+                localStorage.setItem("useremail", usertel);
+
+                // 手機號碼正規表達式
+                let telRule = /^09[0-9]{8}$/;
+
+                if (telRule.test($(this).val())) {
+                    // 符合規定
+                    console.log("符合規定!");
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_usertel = true;
+                } else {
+                    // 不符合規定
+                    console.log("不符合規定!");
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_usertel = false;
+                }
+            });
+
+            let savedUsertel = localStorage.getItem("usertel")
+            console.log(savedUsertel);
+
+            if (savedUsertel != null) {
+                $("#usertel").val(savedUsertel);
+                $("#usertel").trigger("input");
+
+
+                //縣市選單 使用外部資料 js/CityCountyData.json 產生select選單
+                $.ajax({
+                    type: "GET",
+                    url: "js/CityCountyData.json",
+                    dataType: "JSON",
+                    success: showdata_city,
+                    error: function () {
+                        alert("error - js/CityCountyData.json");
+                    }
+
+                });
+
+                //checkbox change 監聽
+
+                $("input[name='interest']").on("change", function () {
+                    //取得所有已經勾選的checkbox
+                    let interest = []
+                    $("input[name='interest']:checked").each(function () {
+                        console.log($(this).val());
+                        interest.push($(this).val());
+                    });
+                    console.log(interest);
+                    if (interest.length > 0) {
+                        flag_interest = true;
+                        $("#interest_msg")
+                            .removeClass("text-secondary text-danger")
+                            .addClass("text-success")
+                            .text("已選擇" + interest.length + "項課程");
+                    } else {
+                        flag_interest = false;
+                        $("#interest_msg")
+                            .removeClass("text-secondary text-success")
+                            .addClass("text-danger")
+                            .text("請至少選擇一項課程");
+                    }
+                });
+
+                $("input[name='classMode']").on("change", function () {
+                    //取得所有已經radio勾選的checkbox
+                    classMode = $("input[name='classMode']:checked").val();
+
+                    if (classMode) {
+                        flag_classMode = true;
+                        $("#classMode_msg")
+                            .removeClass("text-secondary ")
+                            .addClass("text-success")
+                            .text("已選擇" + classMode);
+                    }
+                });
+
+                $("#switch01").on("change", function () {
+                    switchStatus = $(this).prop("checked");
+
+                    if (switchStatus) {
+                        $("#switch_msg")
+                            .removeClass("text-secondary")
+                            .addClass("text-success")
+                            .text("目前狀態：開啟");
+                    } else {
+                        $("#switch_msg")
+                            .removeClass("text-success")
+                            .addClass("text-secondary")
+                            .text("目前狀態：關閉");
+                    }
+                });
+
+                $("#range01").on("input", function () {
+                    console.log($(this).val());
+                    score = $(this).val();
+                    $("#range_value").text($(this).val());
+
+                });
+
+
+
+
+
+                //監聽 #ok_btn確認送出
+                $("#ok_btn").on("click", function () {
+                    if (flag_username && flag_useremail && flag_userpsw && flag_usertel && flag_city && flag_interest && flag_classMode) {
+                        console.log("符合規定!");
+                        if (switchStatus) {
+                            switch_msg = "目前狀態:開啟";
+                        } else {
+                            switch_msg = "目前狀態:關閉";
+                        }
+                        const strHTML = `<div class="h2">報名成功姓名: ${$("#username").val()}</div>
+                    <div class="h2">Email: ${$("#useremail").val()}</div>
+                    <div class="h2">密碼: XXXXXXXXX</div>
+                    <div class="h2">電話: ${$("#usertel").val()}</div>
+                    <div class="h2">居住地: ${$("#city").val()}</div>
+                    <div class="h2">感興趣課程: ${interest.join(" / ")}</div>
+                    <div class="h2">上課方式: ${classMode}</div>
+                     <dia class="h2">程式內容自我評估:${score}分</div>
+                    `;
+                        $("#showmsg").html(strHTML);
+                        clearLocalStorage();
+                    }
+                    else {
+                        console.log("不符合規定!");
+                        Swal.fire({
+                            title: "表單內容錯誤，請修正",
+                            showDenyButton: false,
+                            showCancelButton: false,
+                            confirmButtonText: "確認",
+                            denyButtonText: `Don't save`
+                        }).then((result) => {
+                            /* Read more about isConfirmed, isDenied below */
+                            if (result.isConfirmed) {
+                                location.href = "20261015-forms-EX01.html";
+                            }
+                        });
+                    }
+                    //重新填寫 #reset_btn
+                    $("#reset_btn").on("click", function () {
+                        //清除clearLocalStorage
+                        clearLocalStorage();
+                        //重整畫面
+                        location.reload();
+                    });
+
+                });
+
+
+
+
+
+                function showdata_city(data) {
+                    console.log(data);
+
+                    $("#city").empty();
+                    $("#city").append(`<option value="" selected disabled class="text-center">---請選擇縣市名稱---</option>`)
+                    data.forEach(function (item, index) {
+                        console.log(item.CityName);
+                        const count = index + 1;
+                        const strHTML = `<option value="${item.CityName}">${count}:${item.CityName} </option>`;
+                        $("#city").append(strHTML);
+                    });
+                    $("#city").on("change", function () {
+                        console.log($(this).val());
+                        $(this).removeClass("is-invalid");
+                        $(this).addClass("is-valid");
+                        flag_city = true;
+                    });
+                }
+
+                function clearLocalStorage() {
+                    localStorage.removeItem("username");
+                    localStorage.removeItem("email");
+                }
+
+            });
+    </script>
+</body>
+
+</html>
