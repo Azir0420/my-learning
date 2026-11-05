@@ -1,57 +1,457 @@
+
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>學習歷程</title>
+
+    <title>學習歷程｜程式學習作品集</title>
+
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- 自訂 CSS -->
     <link rel="stylesheet" href="css/myall.css">
 </head>
-<style>
-    .box01{
-        height: 150px;
-        text-align: center,center;
-        text-decoration: none;
-    }
-    .box01 a{
-        text-decoration: none;
-        color: brown;
-        margin-top: auto;
-    }
-</style>
-<body>
-    <div class="wappee box01 bg-info ">
-        <div class="title01">學習歷程筆記展示</div>
-    </div>
-    <div class="row g-1 mt-3">
-        <div class="col-4">
-            <div class="box01 bg-success  title02"><a href="AI-2026929-javascript-travelfood.html" target="_blank"  >JS語法練習-用opendata travelfood(20260929)</a></div>
-        </div>
-        <div class="col-4">
-            <div class="box01 bg-success title02"><a href="練習02-AI.html" target="_blank" >HTML&CSS排版練習</a></div>
-        </div>
-        <div class="col-4">
-            <div class="box01 bg-success title02"><a href="20261001.bootstrap.html"target="_blank" >bootstrap練習</a></div>
-        </div>
-        <div class="col-4">
-            <div class="box01 bg-success title02"><a href="20261001-BS-Table.html"target="_blank" >BS-Table練習</a></div>
-        </div>
-        <div class="col-4">
-            <div class="box01 bg-success title02"><a href="20261006-BS-切版.html"target="_blank" >切版</a></div>
-        </div>
-        <div class="col-4">
-            <div class="box01 bg-success title02"><a href="20261006-BS-Table-EX01.html"target="_blank" >Table-EX</a></div>
-        </div>
-        <div class="col-4">
-            <div class="box01 bg-success title02"><a href="20261015-ch8.from.html"target="_blank" >Form</a></div>
-        </div>
-        <div class="col-4">
-            <div class="box01 bg-success title02"><a href="AI20261027-forms.html"target="_blank" >AIForm</a></div>
-        </div>
-    </div>
 
-</ul>    
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery-4.0.0.js"></script>
+<body>
+
+    <!-- 頁首 Hero 區域 -->
+    <header class="portfolio-hero">
+        <div class="container">
+            <div class="hero-content">
+
+                <div class="hero-brand">
+                    <div class="hero-logo">
+                        <span>&lt;/&gt;</span>
+                    </div>
+                    <div>
+                        <p class="hero-brand-title">MY LEARNING JOURNEY</p>
+                        <p class="hero-brand-subtitle">
+                            WEB DEVELOPMENT PORTFOLIO
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hero-main">
+                    <p class="hero-eyebrow">MY PORTFOLIO · 2026</p>
+
+                    <h1 class="hero-title">學習歷程</h1>
+
+                    <p class="hero-description">
+                        從每一次練習開始，記錄程式學習的過程，
+                        累積自己的作品與成長。
+                    </p>
+
+                    <a href="#learning-timeline" class="hero-button">
+                        探索我的作品
+                        <span aria-hidden="true">↓</span>
+                    </a>
+                </div>
+
+                <div class="hero-footer">
+                    <span>HTML · CSS · JavaScript · Bootstrap</span>
+                    <span>持續學習，持續進步。</span>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- 作品時間軸 -->
+    <main class="portfolio-main" id="learning-timeline">
+        <div class="container">
+
+            <section class="section-heading">
+                <p class="section-eyebrow">MY LEARNING RECORD</p>
+
+                <h2 class="section-title">學習作品時間軸</h2>
+
+                <p class="section-description">
+                    按照學習日期整理練習紀錄，點擊作品即可查看實際成果。
+                </p>
+
+                <div class="portfolio-count">
+                    <span class="count-number">09</span>
+                    <span class="count-label">LEARNING PROJECTS</span>
+                </div>
+            </section>
+
+
+            <div class="timeline">
+
+                <!-- 作品 1 -->
+                <article class="timeline-item">
+                    <div class="timeline-marker">
+                        <span>01</span>
+                    </div>
+
+                    <div class="timeline-date">
+                        <span class="date-day">29</span>
+                        <span class="date-month">SEP 2026</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card-top">
+                            <span class="project-category">JAVASCRIPT</span>
+                            <span class="project-number">PROJECT 01</span>
+                        </div>
+
+                        <h3 class="project-title">
+                            JS 語法練習 — Open Data 旅遊資料
+                        </h3>
+
+                        <p class="project-description">
+                            使用 JavaScript 練習讀取旅遊 Open Data，
+                            學習資料處理與網頁內容呈現。
+                        </p>
+
+                        <div class="project-footer">
+                            <span class="project-tech">JavaScript · JSON</span>
+
+                            <a
+                                href="AI-2026929-javascript-travelfood.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link">
+                                查看作品 <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- 作品 2 -->
+                <article class="timeline-item">
+                    <div class="timeline-marker">
+                        <span>02</span>
+                    </div>
+
+                    <div class="timeline-date">
+                        <span class="date-day">02</span>
+                        <span class="date-month">HTML / CSS</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card-top">
+                            <span class="project-category">WEB DESIGN</span>
+                            <span class="project-number">PROJECT 02</span>
+                        </div>
+
+                        <h3 class="project-title">HTML &amp; CSS 排版練習</h3>
+
+                        <p class="project-description">
+                            練習 HTML 結構與 CSS 樣式設定，
+                            學習如何安排網頁元素及視覺層次。
+                        </p>
+
+                        <div class="project-footer">
+                            <span class="project-tech">HTML · CSS</span>
+
+                            <a
+                                href="練習02-AI.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link">
+                                查看作品 <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- 作品 3 -->
+                <article class="timeline-item">
+                    <div class="timeline-marker">
+                        <span>03</span>
+                    </div>
+
+                    <div class="timeline-date">
+                        <span class="date-day">01</span>
+                        <span class="date-month">OCT 2026</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card-top">
+                            <span class="project-category">BOOTSTRAP</span>
+                            <span class="project-number">PROJECT 03</span>
+                        </div>
+
+                        <h3 class="project-title">Bootstrap 網頁練習</h3>
+
+                        <p class="project-description">
+                            學習 Bootstrap 的網格系統與常用元件，
+                            建立具有響應式能力的網頁。
+                        </p>
+
+                        <div class="project-footer">
+                            <span class="project-tech">Bootstrap · RWD</span>
+
+                            <a
+                                href="20261001.bootstrap.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link">
+                                查看作品 <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- 作品 4 -->
+                <article class="timeline-item">
+                    <div class="timeline-marker">
+                        <span>04</span>
+                    </div>
+
+                    <div class="timeline-date">
+                        <span class="date-day">01</span>
+                        <span class="date-month">OCT 2026</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card-top">
+                            <span class="project-category">TABLE</span>
+                            <span class="project-number">PROJECT 04</span>
+                        </div>
+
+                        <h3 class="project-title">Bootstrap 表格練習</h3>
+
+                        <p class="project-description">
+                            使用 Bootstrap 表格樣式，
+                            練習資料排列、表格邊框與互動效果。
+                        </p>
+
+                        <div class="project-footer">
+                            <span class="project-tech">Bootstrap · Table</span>
+
+                            <a
+                                href="20261001-BS-Table.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link">
+                                查看作品 <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- 作品 5 -->
+                <article class="timeline-item">
+                    <div class="timeline-marker">
+                        <span>05</span>
+                    </div>
+
+                    <div class="timeline-date">
+                        <span class="date-day">06</span>
+                        <span class="date-month">OCT 2026</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card-top">
+                            <span class="project-category">LAYOUT</span>
+                            <span class="project-number">PROJECT 05</span>
+                        </div>
+
+                        <h3 class="project-title">Bootstrap 切版練習</h3>
+
+                        <p class="project-description">
+                            練習使用容器、列與欄位進行版面切分，
+                            建立清楚且有層次的頁面結構。
+                        </p>
+
+                        <div class="project-footer">
+                            <span class="project-tech">Bootstrap · Grid</span>
+
+                            <a
+                                href="20261006-BS-切版.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link">
+                                查看作品 <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- 作品 6 -->
+                <article class="timeline-item">
+                    <div class="timeline-marker">
+                        <span>06</span>
+                    </div>
+
+                    <div class="timeline-date">
+                        <span class="date-day">06</span>
+                        <span class="date-month">OCT 2026</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card-top">
+                            <span class="project-category">TABLE DESIGN</span>
+                            <span class="project-number">PROJECT 06</span>
+                        </div>
+
+                        <h3 class="project-title">Bootstrap Table 實作</h3>
+
+                        <p class="project-description">
+                            延伸表格版型練習，
+                            熟悉表格樣式、資料呈現與排版調整。
+                        </p>
+
+                        <div class="project-footer">
+                            <span class="project-tech">Bootstrap · CSS</span>
+
+                            <a
+                                href="20261006-BS-Table-EX01.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link">
+                                查看作品 <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- 作品 7 -->
+                <article class="timeline-item">
+                    <div class="timeline-marker">
+                        <span>07</span>
+                    </div>
+
+                    <div class="timeline-date">
+                        <span class="date-day">15</span>
+                        <span class="date-month">OCT 2026</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card-top">
+                            <span class="project-category">FORM VALIDATION</span>
+                            <span class="project-number">PROJECT 07</span>
+                        </div>
+
+                        <h3 class="project-title">線上報名表單練習</h3>
+
+                        <p class="project-description">
+                            練習表單欄位設計、使用者輸入驗證，
+                            並改善表單的操作體驗。
+                        </p>
+
+                        <div class="project-footer">
+                            <span class="project-tech">HTML · Bootstrap · JS</span>
+
+                            <a
+                                href="20261015-ch8.from.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link">
+                                查看作品 <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- 作品 8 -->
+                <article class="timeline-item">
+                    <div class="timeline-marker">
+                        <span>08</span>
+                    </div>
+
+                    <div class="timeline-date">
+                        <span class="date-day">27</span>
+                        <span class="date-month">OCT 2026</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card-top">
+                            <span class="project-category">FORM PROJECT</span>
+                            <span class="project-number">PROJECT 08</span>
+                        </div>
+
+                        <h3 class="project-title">AI 表單驗證練習</h3>
+
+                        <p class="project-description">
+                            整理表單驗證邏輯，
+                            持續練習 JavaScript 與使用者互動設計。
+                        </p>
+
+                        <div class="project-footer">
+                            <span class="project-tech">HTML · CSS · JavaScript</span>
+
+                            <a
+                                href="AI20261027-forms.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link">
+                                查看作品 <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <!-- 作品  -->
+                <article class="timeline-item">
+                    <div class="timeline-marker">
+                        <span>09</span>
+                    </div>
+
+                    <div class="timeline-date">
+                        <span class="date-day">5</span>
+                        <span class="date-month">DEC 2026</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card-top">
+                            <span class="project-category">FORM PROJECT</span>
+                            <span class="project-number">PROJECT 08</span>
+                        </div>
+
+                        <h3 class="project-title">work</h3>
+
+                        <p class="project-description">
+                           綜合練習
+                        </p>
+
+                        <div class="project-footer">
+                            <span class="project-tech">HTML · CSS · JavaScript</span>
+
+                            <a
+                                href="work.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link">
+                                查看作品 <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+
+    <!-- 頁尾 -->
+    <footer class="portfolio-footer">
+        <div class="container">
+            <p class="footer-title">Every line of code is progress.</p>
+            <p class="footer-description">
+                學習沒有終點，讓每一次練習成為下一次進步的起點。
+            </p>
+            <p class="footer-copyright">
+                © 2026 我的學習歷程
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+
 </body>
 </html>
