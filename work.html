@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XX電池</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/AI-work.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<style>
+    :root {
+        --v-dark: #123B2A;
+        --v-green: #237A4B;
+        --v-lime: #A5E65A;
+        --v-white: #F4F8F3;
+        --v-gray: #252D29;
+
+        --v-radius: 16px;
+    }
+
+    .navbar-volterra {
+        background-color: var(--v-dark);
+    }
+
+    /* Logo 文字 */
+    .navbar-volterra .navbar-brand {
+        color: white;
+        font-weight: 900;
+    }
+
+    /* 導覽列文字 */
+    .navbar-volterra .nav-link {
+        color: white;
+    }
+
+    /* 滑鼠移過去 */
+    .navbar-volterra .nav-link:hover {
+        color: var(--v-lime);
+    }
+
+    .navbar-brand img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        vertical-align: middle;
+    }
+
+    /* 全站 */
+    body {
+        font-family: "Noto Sans TC", sans-serif;
+        color: var(--v-gray);
+        overflow-x: hidden;
+    }
+
+
+    /* Section 基礎 */
+    section {
+        padding: 100px 0;
+        scroll-margin-top: 75px;
+    }
+
+    section h2 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 900;
+        letter-spacing: -1px;
+    }
+
+    /* 品牌按鈕 */
+    .btn-volterra {
+        background: var(--v-lime);
+        color: var(--v-dark);
+        border-radius: 50px;
+        padding: 12px 30px;
+        font-weight: 800;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .btn-volterra:hover {
+        background: var(--v-green);
+        color: white;
+        transform: translateY(-3px);
+    }
+
+    /* Hero */
+    .hero-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        color: white;
+        background: var(--v-dark);
+    }
+
+    /* 深色區塊 */
+    .philosophy-section,
+    .footer-section {
+        background: var(--v-dark);
+        color: white;
+    }
+
+    /* 淺色區塊 */
+    .product-section,
+    .knowledge-section,
+    .faq-section {
+        background: var(--v-white);
+    }
+
+    /* 圖片 */
+    section img {
+        max-width: 100%;
+        border-radius: var(--v-radius);
+    }
+
+    /* RWD */
+    @media (max-width: 768px) {
+        section {
+            padding: 65px 0;
+        }
+
+        .hero-section {
+            min-height: 85vh;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-logo navbar-volterra">
+            <div class="container ">
+
+                <a class="navbar-brand" href="#s01">
+                    <img src="image/VOLTERRA 能量跃動標誌.png" alt="VOLTERRA Logo">
+                    VOLTERRA
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#s01">首頁</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#s02">品牌</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#s04">產品</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#s09">知識</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#s13">服務</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#s17">聯絡我們</a></li>
+                    </ul>
+
+                    <a href="#s04" class="btn btn-volterra ms-lg-3">
+                        立即選購
+                    </a>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <!-- 01 Hero 首頁主視覺 -->
+        <section id="s01" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+
+
+                    <div class="col-lg-5 hero-content wow animate__fadeInBottomLeft" data-wow-duration="2S">
+                        <div class="hero-tag">
+                            <span class="hero-tag-dot"></span>
+                            POWERING EVERY JOURNEY
+                        </div>
+
+                        <h1>
+                            POWER<br>
+                            YOUR <span>RIDE.</span>
+                        </h1>
+
+                        <h2>每一次啟動，都是精彩旅程的開始。</h2>
+
+                        <p>
+                            為每一位騎士提供可靠的電力選擇。<br>
+                            從日常通勤到熱血旅程，讓每一次出發都充滿能量。
+                        </p>
+
+                        <div class="hero-buttons">
+                            <a href="#s04" class="btn btn-volterra">
+                                探索產品 <span>→</span>
+                            </a>
+                            <a href="#s02" class="hero-link">
+                                認識 VOLTERRA
+                            </a>
+                        </div>
+
+                        <div class="hero-caption">
+                            <span>01</span>
+                            <span class="hero-caption-line"></span>
+                            <span>POWER YOUR RIDE. EVERY DAY.</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-7 hero-visual wow animate__fadeIn" data-wow-delay="1S">
+                        <div id="carouselExampleFade" class="carousel slide carousel-fade hero-carousel"
+                            data-bs-ride="carousel">
+
+                            <div class="carousel-inner">
+
+                                <div class="carousel-item active">
+                                    <img src="image/首頁圖片.jpg" class="d-block w-100" alt="VOLTERRA 品牌主視覺">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="image/首頁2.jpg" class="d-block w-100" alt="VOLTERRA 電池產品">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="image/首頁3.jpg" class="d-block w-100" alt="VOLTERRA 騎乘情境">
+                                </div>
+
+                            </div>
+
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 底部裝飾文字 -->
+            <div class="hero-bottom-text">VOLTERRA / BUILT FOR RIDERS</div>
+        </section>
+
+
+        <!-- 02 About 品牌故事 -->
+        <section id="s02" class="about-section">
+            <div class="container">
+
+                <div class="row align-items-center">
+
+
+                    <div class="col-lg-6 about-visual wow animate__flipInX" data-wow-offset="1">
+                        <div class="about-image">
+                            <img src="image/LOGO story.jpg" alt="VOLTERRA 品牌創立故事">
+
+                            <div class="about-year">
+                                <span>EST.</span>
+                                <strong>2025</strong>
+                            </div>
+                        </div>
+
+                        <div class="about-image-caption">
+                            <span>THE BEGINNING OF VOLTERRA</span>
+                            <span>01 / OUR STORY</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 about-content">
+
+                        <div class="about-tag">
+                            <span></span>
+                            ABOUT VOLTERRA
+                        </div>
+
+                        <h2 class="wow animate__lightSpeedInRight" data-wow-offset="1">
+                            不只是電池，<br>
+                            更是每段旅程的<br>
+                            <span>動力夥伴。</span>
+                        </h2>
+
+                        <p class="about-lead">
+                            一個想法，從一次作業開始。<br>
+                            一份熱情，逐漸成為品牌的起點。
+                        </p>
+
+                        <div class="about-divider"></div>
+
+                        <p>
+                            2025 年，我們從一份個人作業中獲得啟發，
+                            開始思考：能不能親手打造一款屬於自己的機車電池？
+                        </p>
+
+                        <p>
+                            從最初的構想到資料蒐集、產品研究，
+                            我們一步步嘗試，探索電池的可能性，
+                            也逐漸建立起 VOLTERRA 的品牌理念。
+                        </p>
+
+                        <p>
+                            我們相信，電池不只是提供電力的零件，
+                            更是每一趟旅程能夠順利啟程的重要夥伴。
+                            這就是 VOLTERRA 誕生的初衷。
+                        </p>
+
+                        <div class="about-signature">
+                            <strong>VOLTERRA</strong>
+                            <span>POWER YOUR RIDE. EVERY DAY.</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 03 品牌理念 -->
+        <section id="s03" class="philosophy-section">
+            <div class="container">
+
+
+                <div class="philosophy-heading wow animate__bounce" data-wow-offset="2">
+                    <div class="philosophy-tag">
+                        <span></span>
+                        WHAT WE BELIEVE
+                    </div>
+
+                    <h2>POWER WITH <span>PURPOSE.</span></h2>
+
+                    <p>品質、創新、永續，打造新世代電力選擇。</p>
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="philosophy-card wow animate__zoomIn" data-wow-offset="5" data-wow-delay="0.1S"
+                            data-wow-duration="1S">
+                            <div class="philosophy-number">01</div>
+
+                            <div class="philosophy-icon">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+
+                            <h3>品質承諾</h3>
+                            <span class="philosophy-en">QUALITY PROMISE</span>
+
+                            <p>
+                                重視產品品質與每個細節，
+                                讓每一次啟動都安心可靠。
+                            </p>
+
+                            <div class="philosophy-line"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="philosophy-card wow animate__zoomIn" data-wow-offset="5" data-wow-delay="1S"
+                            data-wow-duration="1S">
+                            <div class="philosophy-number">02</div>
+
+                            <div class="philosophy-icon">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+
+                            <h3>綠色永續</h3>
+                            <span class="philosophy-en">GREEN FUTURE</span>
+
+                            <p>
+                                重視資源再利用與電池回收，
+                                朝向更環保的電力未來。
+                            </p>
+
+                            <div class="philosophy-line"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="philosophy-card wow animate__zoomIn" data-wow-offset="5" data-wow-delay="2S"
+                            data-wow-duration="1S">
+                            <div class="philosophy-number">03</div>
+
+                            <div class="philosophy-icon">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+
+                            <h3>騎士至上</h3>
+                            <span class="philosophy-en">RIDER FIRST</span>
+
+                            <p>
+                                以騎士需求為核心，
+                                提供適合每段旅程的電力選擇。
+                            </p>
+
+                            <div class="philosophy-line"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="philosophy-footer">
+                    <span>VOLTERRA</span>
+                    <span>BUILT FOR RIDERS. POWERED BY PURPOSE.</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 04 產品總覽 -->
+        <section id="s04" class="product-section">
+            <div class="container">
+
+
+                <div class="product-heading">
+                    <div class="product-tag">
+                        <span></span>
+                        OUR PRODUCTS
+                    </div>
+
+                    <h2>FIND YOUR <span>POWER.</span></h2>
+                    <p>找到最適合你的專屬電力，為每一段旅程注入能量。</p>
+                </div>
+
+                <div class="row g-4">
+
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <span class="product-type">LEAD-ACID</span>
+                                <img src="image/motorcycle battery1.png" alt="VOLTERRA START 5">
+                            </div>
+
+                            <div class="product-info">
+                                <span class="product-number">01 / START SERIES</span>
+                                <h3>START 5</h3>
+                                <p class="product-description">經典入門鉛酸電池，滿足日常通勤需求。</p>
+
+                                <div class="product-specs">
+                                    <div>
+                                        <small>電壓</small>
+                                        <strong>12V</strong>
+                                    </div>
+                                    <div>
+                                        <small>容量</small>
+                                        <strong>5Ah</strong>
+                                    </div>
+                                    <div>
+                                        <small>類型</small>
+                                        <strong>鉛酸</strong>
+                                    </div>
+                                </div>
+
+                                <a href="#s05" class="product-link">
+                                    了解產品 <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <span class="product-type">LEAD-ACID</span>
+                                <img src="image/motorcycle battery1.png" alt="VOLTERRA START 7">
+                            </div>
+
+                            <div class="product-info">
+                                <span class="product-number">02 / START SERIES</span>
+                                <h3>START 7</h3>
+                                <p class="product-description">提供更高容量選擇，適合多元日常騎乘需求。</p>
+
+                                <div class="product-specs">
+                                    <div>
+                                        <small>電壓</small>
+                                        <strong>12V</strong>
+                                    </div>
+                                    <div>
+                                        <small>容量</small>
+                                        <strong>7Ah</strong>
+                                    </div>
+                                    <div>
+                                        <small>類型</small>
+                                        <strong>鉛酸</strong>
+                                    </div>
+                                </div>
+
+                                <a href="#s05" class="product-link">
+                                    了解產品 <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <span class="product-type">AGM</span>
+                                <img src="image/motorcycle battery1.png" alt="VOLTERRA AGM X7">
+                            </div>
+
+                            <div class="product-info">
+                                <span class="product-number">03 / AGM SERIES</span>
+                                <h3>AGM X7</h3>
+                                <p class="product-description">採用 AGM 技術，提供穩定且免加水的電力選擇。</p>
+
+                                <div class="product-specs">
+                                    <div>
+                                        <small>電壓</small>
+                                        <strong>12V</strong>
+                                    </div>
+                                    <div>
+                                        <small>容量</small>
+                                        <strong>7Ah</strong>
+                                    </div>
+                                    <div>
+                                        <small>類型</small>
+                                        <strong>AGM</strong>
+                                    </div>
+                                </div>
+
+                                <a href="#s06" class="product-link">
+                                    了解產品 <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <span class="product-type">AGM</span>
+                                <img src="image/motorcycle battery1.png" alt="VOLTERRA AGM R9">
+                            </div>
+
+                            <div class="product-info">
+                                <span class="product-number">04 / AGM SERIES</span>
+                                <h3>AGM R9</h3>
+                                <p class="product-description">高容量 AGM 電池，提供更多元的電力配置。</p>
+
+                                <div class="product-specs">
+                                    <div>
+                                        <small>電壓</small>
+                                        <strong>12V</strong>
+                                    </div>
+                                    <div>
+                                        <small>容量</small>
+                                        <strong>9Ah</strong>
+                                    </div>
+                                    <div>
+                                        <small>類型</small>
+                                        <strong>AGM</strong>
+                                    </div>
+                                </div>
+
+                                <a href="#s06" class="product-link">
+                                    了解產品 <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <span class="product-type">LITHIUM</span>
+                                <img src="image/motorcycle battery1.png" alt="VOLTERRA LITHIUM 5">
+                            </div>
+
+                            <div class="product-info">
+                                <span class="product-number">05 / LITHIUM SERIES</span>
+                                <h3>LITHIUM 5</h3>
+                                <p class="product-description">輕量化鋰鐵電池，探索新世代電力科技。</p>
+
+                                <div class="product-specs">
+                                    <div>
+                                        <small>電壓</small>
+                                        <strong>12.8V</strong>
+                                    </div>
+                                    <div>
+                                        <small>容量</small>
+                                        <strong>5Ah</strong>
+                                    </div>
+                                    <div>
+                                        <small>類型</small>
+                                        <strong>鋰鐵</strong>
+                                    </div>
+                                </div>
+
+                                <a href="#s07" class="product-link">
+                                    了解產品 <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <span class="product-type">LITHIUM</span>
+                                <img src="image/motorcycle battery1.png" alt="VOLTERRA LITHIUM 7">
+                            </div>
+
+                            <div class="product-info">
+                                <span class="product-number">06 / LITHIUM SERIES</span>
+                                <h3>LITHIUM 7</h3>
+                                <p class="product-description">兼具輕量化與容量選擇，滿足進階騎乘需求。</p>
+
+                                <div class="product-specs">
+                                    <div>
+                                        <small>電壓</small>
+                                        <strong>12.8V</strong>
+                                    </div>
+                                    <div>
+                                        <small>容量</small>
+                                        <strong>7Ah</strong>
+                                    </div>
+                                    <div>
+                                        <small>類型</small>
+                                        <strong>鋰鐵</strong>
+                                    </div>
+                                </div>
+
+                                <a href="#s07" class="product-link">
+                                    了解產品 <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="product-footer">
+                    <span>VOLTERRA PRODUCT COLLECTION</span>
+                    <span>CHOOSE YOUR POWER. →</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 05 傳統鉛酸電池 -->
+        <section id="s05" class="battery-section">
+            <div class="container">
+                <h2>LEAD-ACID BATTERY</h2>
+                <p>經典可靠，實用的電力選擇。</p>
+            </div>
+        </section>
+
+
+        <!-- 06 AGM 電池 -->
+        <section id="s06" class="battery-section">
+            <div class="container">
+                <h2>AGM BATTERY</h2>
+                <p>升級電池技術，兼顧穩定與便利。</p>
+            </div>
+        </section>
+
+
+        <!-- 07 鋰系電池 -->
+        <section id="s07" class="battery-section">
+            <div class="container">
+                <h2>LITHIUM BATTERY</h2>
+                <p>輕量化科技，探索新世代電力。</p>
+            </div>
+        </section>
+
+
+        <!-- 08 電池比較 -->
+        <section id="s08" class="comparison-section">
+            <div class="container">
+                <h2>CHOOSE YOUR POWER.</h2>
+                <p>不同電池，帶來不同的使用體驗。</p>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>比較項目</th>
+                                <th>鉛酸電池</th>
+                                <th>AGM 電池</th>
+                                <th>鋰系電池</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>重量</td>
+                                <td>依型號而定</td>
+                                <td>依型號而定</td>
+                                <td>通常較輕</td>
+                            </tr>
+                            <tr>
+                                <td>價格</td>
+                                <td>通常較低</td>
+                                <td>通常中等</td>
+                                <td>通常較高</td>
+                            </tr>
+                            <tr>
+                                <td>維護方式</td>
+                                <td>依電池設計而定</td>
+                                <td>通常免補水</td>
+                                <td>依產品規範</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 09 電池構造 -->
+        <section id="s09" class="knowledge-section">
+            <div class="container">
+                <h2>INSIDE THE BATTERY.</h2>
+                <p>深入認識電池內部的構造與運作原理。</p>
+            </div>
+        </section>
+
+
+        <!-- 10 電池知識 -->
+        <section id="s10" class="knowledge-section">
+            <div class="container">
+                <h2>KNOW YOUR POWER.</h2>
+                <p>認識電壓、容量與啟動性能。</p>
+            </div>
+        </section>
+
+
+        <!-- 11 保養指南 -->
+        <section id="s11" class="maintenance-section">
+            <div class="container">
+                <h2>MAINTENANCE GUIDE.</h2>
+                <p>正確保養，讓電池維持良好狀態。</p>
+            </div>
+        </section>
+
+
+        <!-- 12 故障排除 -->
+        <section id="s12" class="troubleshooting-section">
+            <div class="container">
+                <h2>TROUBLESHOOTING.</h2>
+                <p>機車無法啟動？帶你找出可能的原因。</p>
+            </div>
+        </section>
+
+
+        <!-- 13 品質把關 -->
+        <section id="s13" class="quality-section">
+            <div class="container">
+                <h2>QUALITY FIRST.</h2>
+                <p>每一份品質，都值得被嚴格檢視。</p>
+            </div>
+        </section>
+
+
+        <!-- 14 保固服務 -->
+        <section id="s14" class="warranty-section">
+            <div class="container">
+                <h2>RIDE WITH CONFIDENCE.</h2>
+                <p>完善的售後服務，讓每次選擇更安心。</p>
+            </div>
+        </section>
+
+
+        <!-- 15 購買通路 -->
+        <section id="s15" class="dealer-section">
+            <div class="container">
+                <h2>FIND YOUR DEALER.</h2>
+                <p>尋找適合你的電池與專業安裝服務。</p>
+                <a href="#s17" class="btn btn-volterra">立即詢問</a>
+            </div>
+        </section>
+
+
+        <!-- 16 常見問題 -->
+        <section id="s16" class="faq-section">
+            <div class="container">
+                <h2>FREQUENTLY ASKED QUESTIONS.</h2>
+
+                <div class="accordion" id="faqAccordion">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq01">
+                                機車電池多久需要更換？
+                            </button>
+                        </h3>
+                        <div id="faq01" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                更換時間會受到電池種類、使用習慣、
+                                充電系統與環境影響，建議定期檢查。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#faq02">
+                                AGM 與一般鉛酸電池有什麼不同？
+                            </button>
+                        </h3>
+                        <div id="faq02" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                AGM 使用玻璃纖維隔板吸附電解液，
+                                與傳統液式鉛酸電池的結構不同。
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 17 聯絡我們 -->
+        <section id="s17" class="contact-section">
+            <div class="container">
+                <h2>LET'S POWER YOUR RIDE.</h2>
+                <p>有任何產品問題，歡迎與我們聯絡。</p>
+
+                <form id="contactForm">
+                    <input type="text" class="form-control" placeholder="姓名" required>
+
+                    <input type="email" class="form-control" placeholder="Email" required>
+
+                    <select class="form-select" required>
+                        <option value="">請選擇詢問類型</option>
+                        <option>產品諮詢</option>
+                        <option>購買問題</option>
+                        <option>經銷合作</option>
+                        <option>其他問題</option>
+                    </select>
+
+                    <textarea class="form-control" placeholder="請輸入訊息" required></textarea>
+
+                    <button type="submit" class="btn btn-volterra">
+                        送出訊息
+                    </button>
+                </form>
+            </div>
+        </section>
+
+
+        <!-- 18 Footer -->
+        <section id="s18" class="footer-section">
+            <div class="container">
+                <h2>VOLTERRA</h2>
+                <h3>POWER YOUR RIDE. EVERY DAY.</h3>
+                <p>與你一起，驅動更精彩的未來。</p>
+
+                <div class="footer-links">
+                    <a href="#s01">首頁</a>
+                    <a href="#s04">產品</a>
+                    <a href="#s09">知識</a>
+                    <a href="#s17">聯絡我們</a>
+                </div>
+
+                <p>© 2026 VOLTERRA. All Rights Reserved.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://kit.fontawesome.com/a77e269c5c.js" crossorigin="anonymous"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+</body>
+
+</html>
