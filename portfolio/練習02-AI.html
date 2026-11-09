@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海洋商業網站</title>
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+        }
+
+        /* =========================
+           主要外框
+        ========================= */
+
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+            background-color: var(--color-white);
+            box-shadow: 0 0 20px rgba(0, 119, 182, 0.2);
+        }
+
+        /* =========================
+           LOGO / Banner
+        ========================= */
+
+        .logo {
+            width: 1024px;
+            height: 200px;
+            background-color: var(--color-logo);
+            background-image: url(image/LOGO01.avif);
+            background-repeat: no-repeat;
+        }
+
+        /* =========================
+           導覽列
+        ========================= */
+
+        .nav {
+            background-color: var(--color-light);
+            text-align: center;
+            padding: 15px 10px;
+            border-bottom: 3px solid var(--color-secondary);
+        }
+
+        .nav ul {
+            display: inline-block;
+        }
+
+        .nav ul li {
+            float: left;
+            list-style: none;
+        }
+
+        .nav ul li a {
+            display: block;
+            text-decoration: none;
+            background-color: var(--color-secondary);
+            color: var(--color-accent-dark);
+            font-weight: bold;
+
+            padding: 10px 35px;
+            margin: 0 5px;
+
+            border-radius: 8px;
+
+            box-shadow: 3px 3px 0 var(--color-border-shadow);
+
+            transition: all 0.3s ease;
+        }
+
+        .nav ul li a:hover {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            transform: translateY(-2px);
+            box-shadow: 3px 5px 0 var(--color-border-shadow);
+        }
+
+        /* =========================
+           主要內容
+        ========================= */
+
+        .content {
+            padding: 30px 50px 40px;
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.92),
+                    rgba(234, 251, 252, 0.92));
+        }
+
+        .content h1 {
+            font-size: 60px;
+            font-weight: 900;
+            text-align: center;
+            color: var(--color-primary);
+            padding: 10px 0 20px;
+
+            /* 海洋元素裝飾 */
+            text-shadow: 2px 3px 0 rgba(72, 202, 228, 0.4);
+        }
+
+        .content h1::before {
+            content: "🌊 ";
+        }
+
+        .content h1::after {
+            content: " 🌊";
+        }
+
+        .content p {
+            font-size: 20px;
+            line-height: 1.8;
+            padding: 12px 20px;
+            color: var(--color-text-secondary);
+        }
+
+        /* =========================
+           了解更多按鈕
+        ========================= */
+
+        .content a {
+            display: block;
+
+            margin: 30px auto 10px;
+
+            text-decoration: none;
+            text-align: center;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            color: var(--color-white);
+
+            line-height: 45px;
+
+            width: 130px;
+            height: 45px;
+
+            background-color: var(--color-logo);
+
+            border-radius: 25px;
+
+            box-shadow: 3px 3px 0 var(--color-button-shadow);
+
+            transition: all 0.3s ease;
+        }
+
+        .content a:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: 3px 5px 0 var(--color-accent-dark);
+        }
+
+        /* =========================
+           Footer
+        ========================= */
+
+        .footer {
+            width: 1024px;
+            min-height: 50px;
+
+            background-color: var(--color-accent-dark);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-top: 4px solid var(--color-secondary);
+        }
+
+        .footer p {
+            font-size: 16px;
+            color: var(--color-light);
+            text-align: center;
+        }
+
+        /* =====================================================
+           RWD：螢幕寬度 1024px 以下
+        ===================================================== */
+
+        @media screen and (max-width: 1024px) {
+
+            .wrapper {
+                width: 100%;
+            }
+
+            .logo {
+                width: 100%;
+                height: 150px;
+
+                background-image: url(image/LOGO02.avif);
+                background-position: 60% 40%;
+            }
+
+            .nav {
+                padding: 10px;
+            }
+
+            .nav ul {
+                display: block;
+            }
+
+            .nav ul li {
+                float: none;
+            }
+
+            .nav ul li a {
+                margin: 6px 0;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            .content {
+                padding: 25px 30px;
+            }
+
+            .content h1 {
+                font-size: 50px;
+            }
+
+            .content p {
+                font-size: 18px;
+                padding: 8px 5px;
+            }
+
+            .footer {
+                width: 100%;
+            }
+        }
+
+        /* =====================================================
+           RWD：手機版 max-width: 600px
+           商業＋海洋風格
+        ===================================================== */
+
+        @media screen and (max-width: 600px) {
+
+            /* 整體手機版 */
+            body {
+                background-color: #EAFBFC;
+            }
+
+            .wrapper {
+                width: 100%;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* =========================
+               手機版 Banner
+            ========================= */
+
+            .logo {
+                width: 100%;
+                height: 150px;
+
+                background-image: url(image/LOGO02.avif);
+                background-position: center;
+                background-size: cover;
+
+                /* 海洋藍色覆蓋效果 */
+                position: relative;
+            }
+
+            .logo::after {
+                content: "OCEAN BUSINESS";
+                position: absolute;
+
+                left: 0;
+                right: 0;
+                bottom: 12px;
+
+                text-align: center;
+
+                color: #FFFFFF;
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: 3px;
+
+                text-shadow: 1px 2px 4px #06283D;
+            }
+
+            /* =========================
+               手機版導覽列
+            ========================= */
+
+            .nav {
+                padding: 8px 12px;
+
+                background-color: #FFFFFF;
+
+                border-bottom: 3px solid var(--color-secondary);
+            }
+
+            .nav ul {
+                width: 100%;
+                display: block;
+            }
+
+            .nav ul li {
+                float: none;
+                width: 100%;
+            }
+
+            .nav ul li a {
+                width: 100%;
+
+                margin: 6px 0;
+
+                padding: 10px 5px;
+
+                font-size: 16px;
+                font-weight: bold;
+
+                text-align: center;
+
+                color: var(--color-accent-dark);
+
+                background-color: var(--color-secondary);
+
+                border-radius: 6px;
+
+                box-shadow: 2px 2px 0 var(--color-border-shadow);
+            }
+
+            .nav ul li a:hover {
+                background-color: var(--color-primary);
+                color: #FFFFFF;
+            }
+
+            /* =========================
+               手機版內容
+            ========================= */
+
+            .content {
+                padding: 25px 18px 35px;
+
+                background:
+                    linear-gradient(180deg,
+                        #FFFFFF 0%,
+                        #EAFBFC 100%);
+            }
+
+            .content h1 {
+                font-size: 34px;
+
+                line-height: 1.4;
+
+                padding: 5px 0 20px;
+
+                color: var(--color-primary);
+
+                border-bottom: 2px solid var(--color-secondary);
+
+                text-shadow: 1px 2px 0 rgba(72, 202, 228, 0.5);
+            }
+
+            .content h1::before {
+                content: "🌊 ";
+            }
+
+            .content h1::after {
+                content: " 🌊";
+            }
+
+            .content p {
+                font-size: 16px;
+
+                line-height: 1.8;
+
+                padding: 10px 5px;
+
+                color: var(--color-text-primary);
+
+                text-align: justify;
+            }
+
+            /* =========================
+               手機版按鈕
+            ========================= */
+
+            .content a {
+                width: 150px;
+                height: 45px;
+
+                line-height: 45px;
+
+                margin: 25px auto 5px;
+
+                font-size: 16px;
+
+                border-radius: 25px;
+
+                background-color: var(--color-logo);
+
+                box-shadow: 2px 3px 0 var(--color-button-shadow);
+            }
+
+            .content a:hover {
+                background-color: var(--color-primary);
+                box-shadow: 2px 3px 0 var(--color-accent-dark);
+            }
+
+            /* =========================
+               手機版 Footer
+            ========================= */
+
+            .footer {
+                width: 100%;
+                min-height: 55px;
+
+                padding: 10px;
+
+                background-color: var(--color-accent-dark);
+
+                border-top: 4px solid var(--color-secondary);
+            }
+
+            .footer p {
+                font-size: 13px;
+
+                line-height: 1.5;
+
+                color: var(--color-light);
+            }
+        }
+
+        /* =====================================================
+           超小型手機：max-width: 400px
+        ===================================================== */
+
+        @media screen and (max-width: 400px) {
+
+            .logo {
+                height: 125px;
+            }
+
+            .logo::after {
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+
+            .content {
+                padding: 20px 15px 30px;
+            }
+
+            .content h1 {
+                font-size: 28px;
+            }
+
+            .content p {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .nav ul li a {
+                font-size: 15px;
+                padding: 9px;
+            }
+
+            .content a {
+                width: 140px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="banner">
+
+            <!-- Logo / Banner -->
+            <div class="logo bg"></div>
+
+            <!-- 導覽列 -->
+            <div class="nav">
+                <ul>
+                    <li><a href="#">首頁</a></li>
+                    <li><a href="#">最新消息</a></li>
+                    <li><a href="#">合作店家</a></li>
+                    <li><a href="#">關於我們</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </div>
+
+            <!-- 主要內容 -->
+            <div class="content">
+
+                <h1>歡迎光臨</h1>
+                <h4 class="title01">目錄一</h4>
+                <p class="fw900">
+                    文件新增帶來其中不管權力材料在這個一致不然將軍盯着畢業生，
+                    流行點擊有什麼圖象命運早就對著共同一段，是從無關模樣一把招商
+                    徹底防止導航認定居住，突出室內數碼新技術早已當年整理運輸，
+                    青年權威神秘全面基地成人事務存儲，是誰面向交通用戶名網上也會
+                    同時主角表現，一位。
+                </p>
+                <h2 class="title02">目錄二</h2>
+                <p class="fw700">
+                    經銷商行業，資料但在使用精選事實沉默文字面積大量你還，
+                    貸款新臺幣方法如同，吸收如果您微微鈴聲下載中。
+                </p>
+                <h3 class="title03">目錄三</h3>
+                <p class="fw300">
+                    監管成本主流是因為模組機構大家都一番我也轉帖，
+                    舉行怪物一會。
+                </p>
+
+                <a href="#">了解更多</a>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>以上僅供參考　2026/9/23</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

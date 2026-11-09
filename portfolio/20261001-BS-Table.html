@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS-Table(表格)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        @media screen and (max-width:768px) {
+            .table-rwd thead {
+                display: none;
+            }
+
+            .table-rwd tbody tr {
+                display: block;
+            }
+
+            .table-rwd tbody tr td {
+                display: block;
+                overflow: hidden;
+            }
+
+            /* 偽元素 */
+            .table-rwd tbody tr td::before {
+                content: attr(data-th)":";
+                font-weight: 900;
+                color: brown;
+                font-size: 20px;
+                float: left;
+                display: block;
+                width: 30%;
+                text-align: right;
+                padding-right: 10px;
+            }
+            .table-rwd tbody tr td span{
+                display: block;
+                float: left;
+                width: 70%;
+                font-size: 18px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="display-2 fw900 text-center title02">飲料產品列表</div>
+        <table class="table mt-4 table-bordered  table-hover table-sm table-rwd">
+            <thead class="table-dark">
+                <tr>
+                    <th>產品編號</th>
+                    <th>產品名稱</th>
+                    <th>產品價格</th>
+                    <th>產品數量</th>
+                    <th>產品備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-warning">
+                    <td data-th="產品編號"><span>01</span> </td>
+                    <td data-th="產品名稱"><span> 美式咖啡</span></td>
+                    <td data-th="產品價格"><span> 60</span></td>
+                    <td data-th="產品數量"><span>10</span> </td>
+                    <td data-th="產品備註"><span>
+                            認證臨床依靠夏天我現在共有出來強調推出，事件動力分鐘忍不住這一遭遇別的，三大舉辦獨立興奮真是結合，老大能不能不足加速，崗位世界盃精華吃了發生將其平均我國太麻里而在威望，簡體某個樹林用來優秀分為人員大大不但黑色，一年近日針對領先包含，一會兒附近更為，依靠就。</span>
+                    </td>
+                </tr>
+                <tr class="table-danger">
+                    <td data-th="產品編號"><span> 02</span></td>
+                    <td data-th="產品名稱"><span>拿鐵咖啡</span> </td>
+                    <td data-th="產品價格"><span> 70</span></td>
+                    <td data-th="產品數量"><span>10</span> </td>
+                    <td data-th="產品備註"><span>
+                            認證臨床依靠夏天我現在共有出來強調推出，事件動力分鐘忍不住這一遭遇別的，三大舉辦獨立興奮真是結合，老大能不能不足加速，崗位世界盃精華吃了發生將其平均我國太麻里而在威望，簡體某個樹林用來優秀分為人員大大不但黑色，一年近日針對領先包含，一會兒附近更為，依靠就。</span>
+                    </td>
+                </tr>
+                <tr class="table-primary">
+                    <td data-th="產品編號"><span>03</span> </td>
+                    <td data-th="產品名稱"><span>卡布奇諾</span> </td>
+                    <td data-th="產品價格"><span>70</span> </td>
+                    <td data-th="產品數量"><span>10</span> </td>
+                    <td data-th="產品備註"><span>
+                            認證臨床依靠夏天我現在共有出來強調推出，事件動力分鐘忍不住這一遭遇別的，三大舉辦獨立興奮真是結合，老大能不能不足加速，崗位世界盃精華吃了發生將其平均我國太麻里而在威望，簡體某個樹林用來優秀分為人員大大不但黑色，一年近日針對領先包含，一會兒附近更為，依靠就。</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

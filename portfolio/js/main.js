@@ -25,7 +25,10 @@ if (timeline && route && routeSvg && overlaySvg && routeTrack && routeShadow && 
   let currentPathLength = 0;
   let milestoneDistances = [];
   const segmentSpacing = 38;
-  const maxSegments = 9;
+  // 第一顆蘋果之前預留尾巴空間，避免蛇吃到第一顆蘋果時，
+  // 第一節蛇身因為計算位置落在路線起點之外而被隱藏。
+  const tailLead = segmentSpacing * 2.5;
+  const maxSegments = projectItems.length;
   const segmentElements = [];
 
   // 預先建立蛇身圓形節點，捲動時只更新位置。
@@ -64,7 +67,9 @@ if (timeline && route && routeSvg && overlaySvg && routeTrack && routeShadow && 
   // 讓路線從第一顆蘋果中心出發，並精準通過每一顆蘋果中心。
   function createPath(points, isMobile) {
     if (!points.length) return '';
-    let d = `M ${points[0].x} ${points[0].y}`;
+    // 路線先從第一顆蘋果上方延伸一小段，提供蛇身跟在蛇頭後方的空間。
+    // 蛇頭仍會依照原本的捲動進度前進，第一顆蘋果位置則是第一個成長里程碑。
+    let d = `M ${points[0].x} ${points[0].y - tailLead} L ${points[0].x} ${points[0].y}`;
 
     for (let i = 0; i < points.length - 1; i += 1) {
       const from = points[i];
@@ -154,7 +159,12 @@ if (timeline && route && routeSvg && overlaySvg && routeTrack && routeShadow && 
     snakeHead.setAttribute('transform', `translate(${headPoint.x} ${headPoint.y}) rotate(${angle})`);
     snakeHead.classList.toggle('is-visible', progress > 0.005);
 
-    const visibleSegments = Math.min(maxSegments, Math.floor(progress * maxSegments));
+    // 蛇身數量依照已抵達的蘋果數量增加，而不是依照整體捲動百分比增加。
+    // 因此第一顆蘋果抵達時就會出現第一節，第二顆抵達時出現第二節。
+    const visibleSegments = milestoneDistances.reduce(
+      (count, distance) => count + (headDistance >= distance - 1 ? 1 : 0),
+      0
+    );
     segmentElements.forEach((segment, index) => {
       if (index >= visibleSegments) {
         segment.style.display = 'none';

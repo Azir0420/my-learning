@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>地方美食練習</title>
+
+    <link rel="stylesheet" href="css/myall.css">
+
+    <style>
+
+        /* =========================
+           主要內容區
+        ========================= */
+
+        .wrapper {
+            background-color: var(--color-light);
+
+            width: 1024px;
+
+            margin: 0 auto 40px;
+
+            padding: 25px;
+
+            border: 1px solid rgba(0, 119, 182, 0.15);
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 8px 25px rgba(6, 40, 61, 0.12);
+
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           餐廳卡片
+        ========================= */
+
+        .demo {
+            width: 32%;
+
+            background-color: var(--color-white);
+
+            border: 1px solid rgba(0, 119, 182, 0.12);
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 12px rgba(6, 40, 61, 0.10);
+
+            float: left;
+
+            margin-right: 1%;
+
+            margin-bottom: 20px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        /* =========================
+           卡片 Hover
+        ========================= */
+
+        .demo:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 25px rgba(0, 119, 182, 0.20);
+        }
+
+
+        /* =========================
+           餐廳圖片
+        ========================= */
+
+        .demo .logo {
+            width: 100%;
+            height: 200px;
+
+            background-image: url(image/LOGO01.avif);
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            border-bottom: 4px solid var(--color-secondary);
+        }
+
+
+        /* =========================
+           RWD
+           1024px 以下改成單欄
+        ========================= */
+
+        @media screen and (max-width: 1024px) {
+
+            .wrapper {
+                width: 100%;
+
+                margin: 0 auto 30px;
+
+                padding: 20px;
+
+                border-radius: 0;
+            }
+
+
+            .title01 {
+                font-size: 36px;
+
+                padding: 30px 15px 20px;
+            }
+
+
+            .demo {
+                width: 100%;
+
+                float: none;
+
+                margin-right: 0;
+
+                margin-bottom: 20px;
+            }
+
+
+            .demo .logo {
+                width: 100%;
+
+                height: 180px;
+
+                background-image: url(image/LOGO02.avif);
+
+                background-position: 60% 40%;
+
+                background-size: cover;
+            }
+
+        }
+
+
+        /* =========================
+           手機版
+        ========================= */
+
+        @media screen and (max-width: 576px) {
+
+            .title01 {
+                font-size: 30px;
+
+                letter-spacing: 1px;
+
+                padding: 25px 10px 18px;
+            }
+
+
+            .wrapper {
+                padding: 15px;
+            }
+
+
+            .demo .logo {
+                height: 150px;
+            }
+
+
+            .title04 {
+                font-size: 16px;
+
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- 頁面標題 -->
+
+    <div class="display-1 fw900 title01">
+        地方美食餐廳列表
+    </div>
+
+
+    <!-- 餐廳列表 -->
+
+    <div class="wrapper" id="foodlist">
+
+        <!-- 範例卡片 -->
+
+        <div class="demo">
+
+            <div class="logo bg" style="background-image: url(image/LOGO01.avif);"></div>
+
+            <p class="title04">
+                店家:XXX
+            </p>
+
+            <p class="title04">
+                電話:XXXXX
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="js/jquery-4.0.0.js"></script>
+
+    <script src="js/Travelfood.js"></script>
+
+    <script>
+
+        console.log(food);
+
+        food.forEach(function (item) {
+
+            $("#foodlist").append(
+                '<div class="demo">' +
+                    '<div class="logo bg" style="background-image: url('+item.PicURL+')"></div>' +
+                    '<p class="title04">店家:' + item.Name + '</p>' +
+                    '<p class="title04">電話:' + item.Tel + '</p>' +
+                '</div>'
+            );
+
+        });
+
+    </script>
+
+</body>
+
+</html>
