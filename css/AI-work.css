@@ -98,35 +98,68 @@
     margin-bottom: 35px;
 }
 
-/* 按鈕區 */
-.hero-buttons {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    flex-wrap: wrap;
+/* =========================
+Hero 專用按鈕
+========================= */
+
+.hero-buttons .btn-volterra {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+background: var(--v-lime);
+color: var(--v-dark);
+
+border: 2px solid var(--v-lime);
+border-radius: 50px;
+
+padding: 13px 28px;
+
+font-weight: 800;
+text-decoration: none;
+
+transition: var(--v-transition);
 }
 
-/* 探索產品按鈕 */
-.btn-volterra {
-    background: var(--v-lime);
-    color: #123B2A;
-    border: 2px solid var(--v-lime);
-    border-radius: 50px;
-    padding: 13px 28px;
-    font-weight: 800;
-    transition: 0.3s;
+.hero-buttons .btn-volterra span {
+margin-left: 12px;
+font-size: 20px;
+transition: var(--v-transition);
 }
 
-.btn-volterra span {
-    margin-left: 12px;
-    font-size: 20px;
+.hero-buttons .btn-volterra:hover {
+background: transparent;
+color: var(--v-lime);
+
+transform: translateY(-4px);
 }
 
-.btn-volterra:hover {
-    background: transparent;
-    color: var(--v-lime);
-    transform: translateY(-4px);
+.hero-buttons .btn-volterra:active {
+transform: translateY(-1px);
 }
+
+/* =========================
+Header 立即選購按鈕
+恢復螢光綠
+========================= */
+
+.navbar-volterra .btn-volterra {
+background-color: #A5E65A;
+color: #123B2A;
+border: 2px solid #A5E65A;
+border-radius: 50px;
+font-weight: 800;
+transition: 0.3s ease;
+}
+
+/* 滑鼠移入 */
+.navbar-volterra .btn-volterra:hover {
+background-color: transparent;
+color: #A5E65A;
+border-color: #A5E65A;
+transform: translateY(-2px);
+}
+
 
 /* 認識品牌連結 */
 .hero-link {
@@ -3308,4 +3341,79 @@
         align-items: flex-start;
         flex-direction: column;
     }
+}
+/* =========================
+全站共用補強
+========================= */
+
+/* 圖片避免超出容器 */
+img {
+max-width: 100%;
+}
+
+/* 表格可以在小螢幕橫向瀏覽 */
+.table-responsive {
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+}
+
+/* 避免文字與長網址撐開版面 */
+p,
+h1,
+h2,
+h3,
+h4 {
+overflow-wrap: break-word;
+}
+
+/* 按鈕與連結的鍵盤焦點 */
+a:focus-visible,
+button:focus-visible {
+outline: 3px solid var(--v-lime);
+outline-offset: 4px;
+}
+
+/* 減少動畫：尊重使用者系統設定 */
+@media (prefers-reduced-motion: reduce) {
+
+*,
+*::before,
+*::after {
+scroll-behavior: auto !important;
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+}
+
+}
+
+/* 小型手機 */
+@media (max-width: 375px) {
+
+.hero-content h1 {
+font-size: 42px;
+letter-spacing: -2px;
+}
+
+.hero-buttons {
+gap: 15px;
+}
+
+.hero-buttons .btn-volterra {
+padding: 11px 20px;
+font-size: 13px;
+}
+
+.product-info {
+padding: 20px;
+}
+
+.product-info h3 {
+font-size: 23px;
+}
+
+.comparison-table-area {
+padding: 15px;
+}
+
 }
