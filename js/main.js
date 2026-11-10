@@ -209,3 +209,280 @@ if (timeline && route && routeSvg && overlaySvg && routeTrack && routeShadow && 
   }
   rebuildRouteAndUpdate();
 }
+
+/* =========================
+   Snake Loading - Eat 3 Apples
+========================= */
+
+(function () {
+  const loader = document.querySelector("#pageLoader");
+  const svg = document.querySelector("#loaderSnakeSvg");
+  const snakePath = document.querySelector("#loaderSnakePath");
+  const snakeHead = document.querySelector("#loaderSnakeHead");
+  const segmentsGroup = document.querySelector("#loaderSnakeSegments");
+
+  // 確認 HTML 元素存在，而且這次需要顯示 Loading
+  if (
+    !loader ||
+    !svg ||
+    !snakePath ||
+    !snakeHead ||
+    !segmentsGroup ||
+    !document.documentElement.classList.contains("show-loader")
+  ) {
+    return;
+  }
+
+  const apples = [
+    document.querySelector("#loaderApple1"),
+    document.querySelector("#loaderApple2"),
+    document.querySelector("#loaderApple3")
+  ];
+
+  if (apples.some(apple => !apple)) return;
+
+  const totalLength = snakePath.getTotalLength();
+
+  // 三顆蘋果分別位於路線的 33%、66%、100%
+  const appleDistances = [
+    totalLength / 3,
+    totalLength * 2 / 3,
+    totalLength
+  ];
+
+  // 讓蘋果精準放在蛇形路線上
+  apples.forEach((apple, index) => {
+    const point = snakePath.getPointAtLength(
+      appleDistances[index]
+    );
+
+    apple.setAttribute(
+      "transform",
+      `translate(${point.x} ${point.y})`
+    );
+  });
+
+  // 預先建立三個蛇身節點
+  const segments = [];
+
+  for (let i = 0; i < 3; i++) {
+    const group = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "g"
+    );
+
+    const dot = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "circle"
+    );
+
+    dot.setAttribute("class", "loader-body-dot");
+    dot.setAttribute("r", "7");
+
+    const highlight = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "circle"
+    );
+
+    highlight.setAttribute(
+      "class",
+      "loader-body-highlight"
+    );
+
+    highlight.setAttribute("cx", "-2");
+    highlight.setAttribute("cy", "-2");
+    highlight.setAttribute("r", "2");
+
+    group.append(dot, highlight);
+    group.style.display = "none";
+
+    segmentsGroup.appendChild(group);
+    segments.push(group);
+  }
+
+  // 取得蛇頭方向
+  function moveHead(distance) {
+    const point = snakePath.getPointAtLength(distance);
+
+    const nextPoint = snakePath.getPointAtLength(
+      Math.min(totalLength, distance + 2)
+    );
+
+    const angle = Math.atan2(
+      nextPoint.y - point.y,
+      nextPoint.x - point.x
+    ) * 180 / Math.PI;
+
+    snakeHead.setAttribute(
+      "transform",
+      `translate(${point.x} ${point.y}) rotate(${angle})`
+    );
+  }
+
+  // 更新蛇身節點位置
+  function updateSegments(distance, eatenCount) {
+    const spacing = 24;
+
+    segments.forEach((segment, index) => {
+      if (index >= eatenCount) {
+        segment.style.display = "none";
+        return;
+      }
+
+      const segmentDistance = Math.max(
+        0,
+        distance - (index + 1) * spacing
+      );
+
+      const point = snakePath.getPointAtLength(
+        segmentDistance
+      );
+
+      segment.setAttribute(
+        "transform",
+        `translate(${point.x} ${point.y})`
+      );
+
+      segment.style.display = "";
+    });
+  }
+
+  let previousEatenCount = 0;
+  // 更新蛇的移動與進食狀態
+  function updateLoading(progress) {
+    const distance = totalLength * progress;
+
+    // 蛇頭前進
+    moveHead(distance);
+
+    // 讓蛇的路線隨進度逐漸出現
+    snakePath.style.strokeDasharray =
+      `${totalLength} ${totalLength}`;
+
+    snakePath.style.strokeDashoffset =
+      String(totalLength - distance);
+
+    // 計算已經吃掉幾顆蘋果
+    const eatenCount = appleDistances.reduce(
+      (count, appleDistance) => {
+        return count + (
+          distance >= appleDistance - 0.5 ? 1 : 0
+        );
+      },
+      0
+    );
+
+    // 偵測是否剛吃掉新的蘋果
+    if (eatenCount > previousEatenCount) {
+
+      // 蛇頭咬合動畫
+      snakeHead.classList.remove("snake-bite");
+
+      // 強制重新計算動畫，讓連續咬合也能重新播放
+      void snakeHead.getBBox();
+
+      snakeHead.classList.add("snake-bite");
+
+      // 清除咬合狀態
+      setTimeout(() => {
+        snakeHead.classList.remove("snake-bite");
+      }, 250);
+
+      previousEatenCount = eatenCount;
+    }
+
+    // 蘋果縮小並消失
+    apples.forEach((apple, index) => {
+      if (eatenCount > index) {
+        apple.classList.add("eaten");
+      }
+    });
+
+    // 增加蛇身節點
+    updateSegments(distance, eatenCount);
+  }
+
+  // 等待網頁真正載入完成
+  let pageLoaded = document.readyState === "complete";
+
+  if (!pageLoaded) {
+    window.addEventListener(
+      "load",
+      () => {
+        pageLoaded = true;
+      },
+      { once: true }
+    );
+  }
+
+  // 動畫設定
+  const loadingStart = performance.now();
+  const travelDuration = 5000;
+  const finishDuration = 900;
+
+  let finishStart = null;
+  let finished = false;
+
+  function animate(now) {
+    const elapsed = now - loadingStart;
+
+    // 載入期間先前進到 90%
+    const travelProgress = Math.min(
+      0.9,
+      elapsed / travelDuration * 0.9
+    );
+
+    let progress = travelProgress;
+
+    // 網頁載入完成後，再前進至 100%
+    if (pageLoaded && travelProgress >= 0.9) {
+      if (finishStart === null) {
+        finishStart = now;
+      }
+
+      const finishProgress = Math.min(
+        1,
+        (now - finishStart) / finishDuration
+      );
+
+      progress = 0.9 + finishProgress * 0.1;
+    }
+
+    updateLoading(progress);
+
+    // 三顆蘋果全部吃完
+    if (progress >= 1 && !finished) {
+      finished = true;
+
+      // 給最後一次進食一點停留時間
+      setTimeout(() => {
+        loader.classList.add("loader-finished");
+
+        setTimeout(() => {
+          loader.style.display = "none";
+
+          document.documentElement.classList.remove(
+            "show-loader"
+          );
+
+          sessionStorage.setItem(
+            "portfolioLoaderSeen",
+            "true"
+          );
+        }, 650);
+
+      }, 450);
+
+      return;
+    }
+
+    if (!finished) {
+      requestAnimationFrame(animate);
+    }
+  }
+
+  // 從蛇形路線起點開始
+  updateLoading(0);
+  requestAnimationFrame(animate);
+
+})();
